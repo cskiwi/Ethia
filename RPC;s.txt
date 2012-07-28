@@ -1,0 +1,50 @@
+    #region RPC things
+    // senders
+    [RPC]
+    void SendInfoToServer(string info){
+        //networkView.RPC("ClientToServer", RPCMode.Server, game_character.Name, info);
+    }
+    [RPC]
+    void UpdatePlayerPosition(Transform pos) {
+        //networkView.RPC("UpdatePlayerPos", RPCMode.Server,game_character.Name, pos);
+    }
+
+    // Receivers
+    [RPC]
+    void SetPlayerInfo(NetworkPlayer player) {
+        // Meh
+    }
+    [RPC]
+    void ServerToClient(string someInfo) {
+        _messageLog += someInfo + "\n";
+    }
+
+    // Aivailble server receivers
+    [RPC]
+    void ClientToServer(string sender, string someInfo) { }
+    #endregion
+
+-------------------------SERVER--------------------------------
+
+ // senders
+    [RPC]
+    void SendInfoToClients(string someInfo) {
+        networkView.RPC("ServerToClient", RPCMode.Others, "Server: " + someInfo);
+    }
+
+    // Receivers
+    [RPC]
+    void ClientToServer(string sender, string someInfo) {
+        _messageLog += sender + ": " + someInfo + "\n";
+    }
+    [RPC]
+    void UpdatePlayerPos(string sender, Transform pos) {
+       
+    }
+
+
+    // Aivailble client receivers
+    [RPC]
+    void ServerToClient(string someInfo) { }
+    [RPC]
+    void SetPlayerInfo(NetworkPlayer player) { }

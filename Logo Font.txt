@@ -1,0 +1,5 @@
+Font: Black Chancery
+
+Color: #CC0000 
+Background: #FFFFFF
+Shadow: #808080
