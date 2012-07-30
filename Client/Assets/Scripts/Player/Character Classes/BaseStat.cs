@@ -42,7 +42,7 @@ public class BaseStat{
 		_baseValue++;
 	}
 	
-	public int AdjustedValue(){
-		return _baseValue + _buffValue;	
+	public int AdjustedBaseValue{
+		get{ return _baseValue + _buffValue; }
 	}
 }

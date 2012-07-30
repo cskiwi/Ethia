@@ -4,3 +4,12 @@ public class Attribute : BaseStat {
 		LevelModifier = 1.05f;
 	}
 }
+public enum AttributeName {
+	Might,
+	Constitution,
+	Nimbleness,
+	Speed,
+	Concentration,
+	Willpower,
+	Charisma
+}
