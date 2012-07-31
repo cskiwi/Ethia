@@ -59,18 +59,22 @@ public class BaseCharacter : MonoBehaviour {
 	}
 #region Setup
 	private void SetupPrimaryAttribute(){
-		for (int i = 0; i < _primaryAttribute.Length; i++)
-			_primaryAttribute[i] = new Attribute();
+        for (int i = 0; i < _primaryAttribute.Length; i++) {
+            _primaryAttribute[i] = new Attribute();
+            _primaryAttribute[i].Name = ((AttributeName)i).ToString();
+        }
 	}
 	
 	private void SetupVitals(){
 		for (int i = 0; i < _vital.Length; i++)
 			_vital[i] = new Vital();
+		SetupVitalModifiers();
 	}
 	
 	private void SetupSkills(){
 		for (int i = 0; i < _skill.Length; i++)
 			_skill[i] = new Skill();
+		SetupSkillModifiers();
 	}
 	
 	private void SetupVitalModifiers(){	
