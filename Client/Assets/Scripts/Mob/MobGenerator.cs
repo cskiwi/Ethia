@@ -38,7 +38,7 @@ public class MobGenerator : MonoBehaviour {
     }
 
     private void Initialize() {
-        Debug.Log("-----=[Initialzie]=-----");
+        // Debug.Log("-----=[Initialzie]=-----");
 
         if (!checkForMobPrefabs())
             return;
@@ -50,7 +50,7 @@ public class MobGenerator : MonoBehaviour {
     }
 
     private void Setup() {
-        Debug.Log("-----=[Setup]=-----");
+        // Debug.Log("-----=[Setup]=-----");
 
         state = State.SpawnMob;
     }
@@ -59,7 +59,7 @@ public class MobGenerator : MonoBehaviour {
     /// Spawn a mob in an open spawn point
     /// </summary>
     private void SpawnMob() {
-        Debug.Log("-----=[SpawnMob]=-----");
+       // Debug.Log("-----=[SpawnMob]=-----");
 
         GameObject[] gos = AvailableSpawnPoints();
 
@@ -97,7 +97,7 @@ public class MobGenerator : MonoBehaviour {
 
         for (int i = 0; i < spawnPoints.Length; i++) {
             if (spawnPoints[i].transform.childCount == 0) {
-                Debug.Log("-----=[Spawn point Availible]=-----");
+//                Debug.Log("-----=[Spawn point Availible]=-----");
                 gos.Add(spawnPoints[i]);
             }
         }    
